@@ -1,9 +1,8 @@
 // import exprss
 const express=require('express');
+const userRouter = require('./routes/userRoutes');
 //create an express app
 const app=express();
-app.get('/',(request,response)=>
-{
-    response.send("hello world");
-})
+app.use('/api/v1',userRouter);
+
 module.exports=app;
