@@ -1,11 +1,12 @@
-const requestLogger = (request, response, next) => {
-    console.log('Method:', request.method)
-    console.log('Path:  ', request.path)
-    console.log('Body:  ', request.body)
-    console.log('Query: ', request.query)
-    console.log('Params: ', request.params)
-    console.log('Cookies: ', request.cookies)
+const requestLogger = (req, res, next) => {
+    console.log('Method:', req.method)
+    console.log('Path:  ', req.path)
+    console.log('Body:  ', req.body)
+    console.log('Query: ', req.query)
+    console.log('Params: ', req.params)
+    console.log('Cookies: ', req.cookies)
     console.log('---')
     next()
 }
+
 module.exports = requestLogger;
