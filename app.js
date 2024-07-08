@@ -3,6 +3,7 @@ const express = require('express');
 const userRouter = require('./routes/userRoutes');
 const requestLogger = require('./utils/logger');
 const unknownEndpoint = require('./utils/Error');
+const cartRouter = require('./models/cart');
 // const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -28,6 +29,7 @@ app.use(requestLogger);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/orders', orderRouter);
+app.use('/api/v1/carts', cartRouter);
 app.use(unknownEndpoint);
 
 module.exports = app;
